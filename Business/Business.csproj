@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D17BF03C-E2A5-4D28-89B3-7CE43B4D676F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Business</RootNamespace>
+    <AssemblyName>Business</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\alephatm\Imports\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.15\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.ClientEngine">
+      <HintPath>..\alephatm\Imports\SuperSocket.ClientEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Utilities">
+      <HintPath>..\alephatm\Imports\Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="WebSocket4Net">
+      <HintPath>..\alephatm\Imports\WebSocket4Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core.cs" />
+    <Compile Include="Counters.cs" />
+    <Compile Include="CountersManager.cs" />
+    <Compile Include="Download.cs" />
+    <Compile Include="Host\NDChost.cs" />
+    <Compile Include="Health.cs" />
+    <Compile Include="Host\CustomerMedia.cs" />
+    <Compile Include="Host\AlephHost.cs" />
+    <Compile Include="ModulesVerifier.cs" />
+    <Compile Include="Printers\PrinterCommands.cs" />
+    <Compile Include="Printers\PrinterTemplate.cs" />
+    <Compile Include="Printers\PrintFormat.cs" />
+    <Compile Include="Screens\HtmlGenerator.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\ScreenColorMapping.cs" />
+    <Compile Include="Screens\ScreenColumnMapping.cs" />
+    <Compile Include="Screens\TableItem.cs" />
+    <Compile Include="Screens\ScreenRowMapping.cs" />
+    <Compile Include="SDO.cs" />
+    <Compile Include="States\PropertiesJournal.cs" />
+    <Compile Include="States\PropertiesMoreTime.cs" />
+    <Compile Include="States\PropertiesState.cs" />
+    <Compile Include="States\State.cs" />
+    <Compile Include="States\z010 - SettlementOperationState\PropertiesSettlementOperationState.cs" />
+    <Compile Include="States\z010 - SettlementOperationState\SettlementOperationState.cs" />
+    <Compile Include="States\z011 - SetExtraDataState\PropertiesSetExtraDataState.cs" />
+    <Compile Include="States\z011 - SetExtraDataState\SetExtraDataState.cs" />
+    <Compile Include="States\z015 - ConfigurationState\ConfigurationState.cs" />
+    <Compile Include="States\z015 - ConfigurationState\PropertiesConfigurationState.cs" />
+    <Compile Include="States\z013 - ShipoutState\ShipoutState.cs" />
+    <Compile Include="States\z013 - ShipoutState\PropertiesShipoutState.cs" />
+    <Compile Include="States\z009 - BagDropDepositState\BagDropDepositState.cs" />
+    <Compile Include="States\z009 - BagDropDepositState\PropertiesBagDropDepositState.cs" />
+    <Compile Include="States\May - CashAcceptState\CashAcceptState.cs" />
+    <Compile Include="States\May - CashAcceptState\PropertiesCashAcceptState.cs" />
+    <Compile Include="States\A - CardReadState\CardReadState.cs" />
+    <Compile Include="States\Amp - BarcodeReadState\BarcodeReadState.cs" />
+    <Compile Include="States\Amp - BarcodeReadState\PropertiesBarcodeReadState.cs" />
+    <Compile Include="States\C - EnvelopeDispenserState\EnvelopeDispenserState.cs" />
+    <Compile Include="States\C - EnvelopeDispenserState\PropertiesEnvelopeDispenserState.cs" />
+    <Compile Include="States\D - PreSetOperationCodeBufferState\PropertiesPreSetOperationCodeBufferState.cs" />
+    <Compile Include="States\D - PreSetOperationCodeBufferState\PreSetOperationCodeBufferState.cs" />
+    <Compile Include="States\d - AccountSelectorState\AccountSelectorState.cs" />
+    <Compile Include="States\d - AccountSelectorState\PropertiesAccountSelectorState.cs" />
+    <Compile Include="States\I ‐ TransactionRequestState\TransactionRequestState.cs" />
+    <Compile Include="States\I ‐ TransactionRequestState\PropertiesTransactionRequestState.cs" />
+    <Compile Include="States\DefaultClose\DefaultCloseState.cs" />
+    <Compile Include="States\DefaultClose\PropertiesDefaultCloseState.cs" />
+    <Compile Include="States\E - FourFDKSelectionFunctionState\FourFDKSelectionFunctionState.cs" />
+    <Compile Include="States\E - FourFDKSelectionFunctionState\PropertiesFourFDKSelectionFunctionState.cs" />
+    <Compile Include="States\F - AmountEntryState\AmountEntryState.cs" />
+    <Compile Include="States\F - AmountEntryState\PropertiesAmountEntryState.cs" />
+    <Compile Include="States\H - InformationEntryState\InformationEntryState.cs" />
+    <Compile Include="States\H - InformationEntryState\PropertiesInformationEntryState.cs" />
+    <Compile Include="States\J - CloseState\CloseState.cs" />
+    <Compile Include="States\J - CloseState\PropertiesCloseState.cs" />
+    <Compile Include="States\W ‐ FDKSwitchState\FDKSwitchState.cs" />
+    <Compile Include="States\A - CardReadState\PropertiesCardReadState.cs" />
+    <Compile Include="States\W ‐ FDKSwitchState\PropertiesFDKSwitchState.cs" />
+    <Compile Include="States\B - PinEntryState\PINEntryState.cs" />
+    <Compile Include="States\B - PinEntryState\PropertiesPINEntryState.cs" />
+    <Compile Include="States\MoreTime\MoreTimeConfigurationType.cs" />
+    <Compile Include="States\MoreTime\NoKeyType.cs" />
+    <Compile Include="States\MoreTime\Result.cs" />
+    <Compile Include="States\MoreTime\MoreTime.cs" />
+    <Compile Include="States\MoreTime\MoreTimeEventArgs.cs" />
+    <Compile Include="States\MoreTime\YesKeyType.cs" />
+    <Compile Include="States\TransitionHandler.cs" />
+    <Compile Include="States\StateTransition.cs" />
+    <Compile Include="States\Y - EightFDKSelectionFunctionState\EightFDKSelectionFunctionState.cs" />
+    <Compile Include="States\Y - EightFDKSelectionFunctionState\PropertiesEightFDKSelectionFunctionState.cs" />
+    <Compile Include="States\z008 - LoginState\LoginState.cs" />
+    <Compile Include="States\z008 - LoginState\PropertiesLoginState.cs" />
+    <Compile Include="States\z006 - FingerPrintCaptureState\FingerPrintCaptureState.cs" />
+    <Compile Include="States\z006 - FingerPrintCaptureState\PropertiesFingerPrintCaptureState.cs" />
+    <Compile Include="States\P - PrintState\PrintState.cs" />
+    <Compile Include="States\P - PrintState\PropertiesPrintState.cs" />
+    <Compile Include="States\z012 - MultiCashAcceptState\MultiCashAcceptState.cs" />
+    <Compile Include="States\z012 - MultiCashAcceptState\PropertiesMultiCashAcceptState.cs" />
+    <Compile Include="States\z014 - SupervisorState\PropertiesSupervisorState.cs" />
+    <Compile Include="States\z014 - SupervisorState\SupervisorState.cs" />
+    <Compile Include="States\z016 - CashDispenseState\CashDispenseState.cs" />
+    <Compile Include="States\z016 - CashDispenseState\PropertiesCashDispenseState.cs" />
+    <Compile Include="States\z024 - CoinDispenserState\CoinDispenserState.cs" />
+    <Compile Include="States\z024 - CoinDispenserState\PropertiesCoinDispenserState.cs" />
+    <Compile Include="States\z023 - ChangeHandlerState\PropertiesChangeHandlerState.cs" />
+    <Compile Include="States\z023 - ChangeHandlerState\ChangeHandlerState.cs" />
+    <Compile Include="States\z022 - ShoppingCartState\PropertiesShoppingCartState.cs" />
+    <Compile Include="States\z022 - ShoppingCartState\ShoppingCartState.cs" />
+    <Compile Include="States\z021 - TransactionMenuState\TransactionMenuState.cs" />
+    <Compile Include="States\z021 - TransactionMenuState\PropertiesTransactionMenuState.cs" />
+    <Compile Include="States\z017 - ChoicesSelectorState\ChoicesSelectorState.cs" />
+    <Compile Include="States\z017 - ChoicesSelectorState\PropertiesChoicesSelectorState.cs" />
+    <Compile Include="States\z018 - CheckDepositState\CheckDepositState.cs" />
+    <Compile Include="States\z018 - CheckDepositState\PropertiesCheckDepositState.cs" />
+    <Compile Include="States\z019 - VerifyNotesState\VerifyNotesState.cs" />
+    <Compile Include="States\z019 - VerifyNotesState\PropertiesVerifyNotesState.cs" />
+    <Compile Include="States\z020 - PinPadPaymentState\PropertiesPinPadPaymentState.cs" />
+    <Compile Include="States\z020 - PinPadPaymentState\PinPadPaymentState.cs" />
+    <Compile Include="TaskScheduler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{9d353af2-e43f-4475-ad76-2efdb47d58c0}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\external_interface\External_Interface\External_Interface.csproj">
+      <Project>{879a355c-7e7f-498b-bb41-6e6e4ba59079}</Project>
+      <Name>External_Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

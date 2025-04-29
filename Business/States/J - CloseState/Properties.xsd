@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+/***********************************************************************************
+*                                                                                  *
+*                                                                                  *
+*    COPYRIGHT (C) DIEBOLD, INCORPORATED   (2006-2007)                             *
+*                       ALL RIGHTS RESERVED                                        *
+*                                                                                  *
+* ===============================================================================  *
+*                                                                                  *
+*                                                                                  *
+* This software contains proprietary, trade secret information and is the property *
+* of Diebold.  This software and the information contained therein may not be      *
+* disclosed, used, transferred or copied in whole or in part without the express,  *
+* prior written consent of Diebold.                                                *
+*                                                                                  *
+*                                                                                  *
+***********************************************************************************/
+
+-->
+<xs:schema targetNamespace="http://www.diebold.com/agilis/activities/NDCDefaultClose/1.0.0.0/" xmlns="http://www.diebold.com/agilis/activities/NDCDefaultClose/1.0.0.0/" xmlns:agilis="http://www.diebold.com/agilis/activities/types/1.0.0.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="Properties">
+    <xs:annotation>
+      <xs:documentation>Properties of NDCDefaultClose Activity.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Screens">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TakeCard" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>Asks customer to take their card. If empty, no screen will be shows.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CardEjectFail" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>Screen name to shows when card eject fails.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CardCaptured" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>Screen name to shows when card is captured.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TimeOut">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ErrorScreen" type="xs:int" default="5">
+                <xs:annotation>
+                  <xs:documentation>ErrorScreen screen display time-out interval.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CardEjectFail" type="xs:int" default="5">
+                <xs:annotation>
+                  <xs:documentation>CardEjectFail screen display time-out interval.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CardCaptured" type="xs:int" default="5">
+                <xs:annotation>
+                  <xs:documentation>CardCaptured screen display time-out interval.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Journal">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EnableJournal" type="xs:boolean" default="false">
+                <xs:annotation>
+                  <xs:documentation>Indicates if journaling is to be performed. Default false.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CardEjectedFileName" type="xs:string" default="CardEjected.txt">
+                <xs:annotation>
+                  <xs:documentation>Name of the file that contains the text to be written when card is ejected.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CardCapturedFileName" type="xs:string" default="CardCaptured.txt">
+                <xs:annotation>
+                  <xs:documentation>Name of the file that contains the text to be written when card is captured.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

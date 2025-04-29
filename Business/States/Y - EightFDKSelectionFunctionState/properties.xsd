@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+/***********************************************************************************
+*                                                                                  *
+*                                                                                  *
+*    COPYRIGHT (C) DIEBOLD, INCORPORATED   (2006-2007)                             *
+*                       ALL RIGHTS RESERVED                                        *
+*                                                                                  *
+* ===============================================================================  *
+*                                                                                  *
+*                                                                                  *
+* This software contains proprietary, trade secret information and is the property *
+* of Diebold.  This software and the information contained therein may not be      *
+* disclosed, used, transferred or copied in whole or in part without the express,  *
+* prior written consent of Diebold.                                                *
+*                                                                                  *
+*                                                                                  *
+***********************************************************************************/
+
+-->
+<xs:schema
+   targetNamespace="http://www.diebold.com/agilis/activities/GetCustomerInput/1.0.0.0/" 
+    xmlns="http://www.diebold.com/agilis/activities/GetCustomerInput/1.0.0.0/" 
+    xmlns:agilis="http://www.diebold.com/agilis/activities/types/1.0.0.0/" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified" 
+    attributeFormDefault="unqualified">
+
+      <xs:import namespace="http://www.diebold.com/agilis/activities/types/1.0.0.0/" 
+                 schemaLocation="../../custom-types-1.0.0.0.xsd"/>
+	<xs:element name="Properties">
+		<xs:annotation>
+			<xs:documentation>GetCustomerInput Activity properties.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ScreenName" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Asks the customer to select an option.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TimeOut" type="xs:int" default="45">
+					<xs:annotation>
+						<xs:documentation>Maximum time in seconds activity waits for customer input. Default 45 s.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+        <xs:element name="TimeOutStateScreenName" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>Screen name to Time-Out State (do you like more time?). If empty, it does not execute the Time-Our State.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="MaxTimeOutRetries" type="xs:int" default="1">
+          <xs:annotation>
+            <xs:documentation>Indicates the maximum number of retries (Time-Out State). If value is zero, no retry is applied. Default 1.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="TimeOutToTimeOutState" type="xs:int" default="10">
+          <xs:annotation>
+            <xs:documentation>Do you like more time input entry time-out interval. Default 10 s.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="TimeOutScreenBeepEnabled" type="xs:boolean" default="false">
+          <xs:annotation>
+            <xs:documentation>If true, enables the beep while waiting for customer input. Default false.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="UseEightFDKs" type="xs:boolean" default="false">
+          <xs:annotation>
+            <xs:documentation>Indicates if the screen can enable the eight FDKs. Default false.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="EnableFDKA" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Indicates if the FDK A must be activated.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="EnableFDKB" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Indicates if the FDK B must be activated.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="EnableFDKC" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Indicates if the FDK C must be activated.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="EnableFDKD" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Indicates if the FDK D must be activated.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="EnableFDKF" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>
+              Indicates if the FDK F must be activated. If the UseEightFDKs is false, this property cannot be used,
+              because if the TpaActivity.UseLeftHandKeys is true this FDK will assume the functionality of the FDK D.
+            </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="EnableFDKG" type="xs:string">
+					<xs:annotation>
+            <xs:documentation>
+              Indicates if the FDK G must be activated. If the UseEightFDKs is false, this property cannot be used,
+              because if the TpaActivity.UseLeftHandKeys is true this FDK will assume the functionality of the FDK C.
+            </xs:documentation>
+          </xs:annotation>
+				</xs:element>
+				<xs:element name="EnableFDKH" type="xs:string">
+					<xs:annotation>
+            <xs:documentation>
+              Indicates if the FDK H must be activated. If the UseEightFDKs is false, this property cannot be used,
+              because if the TpaActivity.UseLeftHandKeys is true this FDK will assume the functionality of the FDK B.
+            </xs:documentation>
+          </xs:annotation>
+				</xs:element>
+				<xs:element name="EnableFDKI" type="xs:string">
+					<xs:annotation>
+            <xs:documentation>
+              Indicates if the FDK I must be activated. If the UseEightFDKs is false, this property cannot be used,
+              because if the TpaActivity.UseLeftHandKeys is true this FDK will assume the functionality of the FDK A.
+            </xs:documentation>
+          </xs:annotation>
+				</xs:element>
+        <xs:element name="Journal">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EnableJournal" type="xs:boolean" default="false">
+                <xs:annotation>
+                  <xs:documentation>Indicates if journaling is to be performed. Default false.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="InputCancelFileName" type="xs:string" default="InputCancel.txt">
+                <xs:annotation>
+                  <xs:documentation>Name of the file that contains the text to be written when customer cancels the input.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="InputTimeoutFileName" type="xs:string" default="InputTimeout.txt">
+                <xs:annotation>
+                  <xs:documentation>Name of the file that contains the text to be written when input timeout occurs.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+	</xs:element>
+</xs:schema>

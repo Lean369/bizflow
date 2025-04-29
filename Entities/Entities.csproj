@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D353AF2-E43F-4475-AD76-2EFDB47D58C0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entities</RootNamespace>
+    <AssemblyName>Entities</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BizFlow\Imports\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NLog.4.7.15\lib\net35\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Utilities, Version=1.0.5.12, Culture=neutral, PublicKeyToken=c3ff8fe0486cc845, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BizFlow\Imports\Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountDetail.cs" />
+    <Compile Include="ADMCapabilities.cs" />
+    <Compile Include="ADMStatus.cs" />
+    <Compile Include="Aleph\Close.cs" />
+    <Compile Include="Aleph\ITransaction.cs" />
+    <Compile Include="Aleph\Language.cs" />
+    <Compile Include="Aleph\Shipout.cs" />
+    <Compile Include="Aleph\Ticket.cs" />
+    <Compile Include="AuthorizationResult.cs" />
+    <Compile Include="BagDropDetailsBagsInfo.cs" />
+    <Compile Include="CashDepositTransaction.cs" />
+    <Compile Include="CoinHopperMapping.cs" />
+    <Compile Include="Devices\CashUnitInfo.cs" />
+    <Compile Include="Devices\DenominationCDM.cs" />
+    <Compile Include="Devices\DenominationCOIN.cs" />
+    <Compile Include="Devices\Positions.cs" />
+    <Compile Include="Devices\PresentStatusCDM.cs" />
+    <Compile Include="Devices\SDO_DeviceState.cs" />
+    <Compile Include="Devices\StatusCDM.cs" />
+    <Compile Include="Devices\StatusCOIN.cs" />
+    <Compile Include="Devices\StatusSIU.cs" />
+    <Compile Include="Devices\TypeCassette.cs" />
+    <Compile Include="ErrorData.cs" />
+    <Compile Include="ExternalApps.cs" />
+    <Compile Include="ExtraDataInfo.cs" />
+    <Compile Include="Devices\BagDropInfo.cs" />
+    <Compile Include="Devices\CashAcceptor.cs" />
+    <Compile Include="Devices\CommandData.cs" />
+    <Compile Include="Devices\Completion.cs" />
+    <Compile Include="Devices\DeviceMessage.cs" />
+    <Compile Include="Devices\ErrorCodesTable.cs" />
+    <Compile Include="Devices\MySqlDBPDO.cs" />
+    <Compile Include="Devices\RecognizedAmount.cs" />
+    <Compile Include="Devices\CashInAcceptedNotes.cs" />
+    <Compile Include="Devices\SensorsState.cs" />
+    <Compile Include="Devices\StatusCIM.cs" />
+    <Compile Include="Devices\CimNoteTypeInfo.cs" />
+    <Compile Include="Devices\CashInInfo.cs" />
+    <Compile Include="Devices\CashInMultiCashData.cs" />
+    <Compile Include="Devices\DeviceConfigurations.cs" />
+    <Compile Include="AlephATMAppData.cs" />
+    <Compile Include="ApplVisitExtraInfo.cs" />
+    <Compile Include="Const.cs" />
+    <Compile Include="EDET\EdetResponse.cs" />
+    <Compile Include="EDET\Factura.cs" />
+    <Compile Include="ExtraData.cs" />
+    <Compile Include="ExtraDataConf.cs" />
+    <Compile Include="FieldOption.cs" />
+    <Compile Include="Filter.cs" />
+    <Compile Include="Functions\MixCalculator.cs" />
+    <Compile Include="Health.cs" />
+    <Compile Include="Ihost.cs" />
+    <Compile Include="IniFile.cs" />
+    <Compile Include="IOBoardModels.cs" />
+    <Compile Include="ITR_Type.cs" />
+    <Compile Include="LocalUser.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="LogConfiguration.cs" />
+    <Compile Include="NDCData.cs" />
+    <Compile Include="NDCMsgCustomized.cs" />
+    <Compile Include="GlobalAppData.cs" />
+    <Compile Include="Aleph\Transaction.cs" />
+    <Compile Include="ObjectDumper.cs" />
+    <Compile Include="PaymentService.cs" />
+    <Compile Include="PRDM\Profile.cs" />
+    <Compile Include="PRDM\MoneyGroup.cs" />
+    <Compile Include="PRDM\counters.cs" />
+    <Compile Include="PRDM\user.cs" />
+    <Compile Include="PRDM\UserProfile.cs" />
+    <Compile Include="PRDM\TrxMessage.cs" />
+    <Compile Include="PRDM\Contents.cs" />
+    <Compile Include="PRDM\Detail.cs" />
+    <Compile Include="PRDM\Device.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="PRDM\Item.cs" />
+    <Compile Include="PRDM\ItemDeclared.cs" />
+    <Compile Include="PRDM\UserPrdm.cs" />
+    <Compile Include="PRDM\Users.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BusinessObject.cs" />
+    <Compile Include="NDCCashInNotesMapping.cs" />
+    <Compile Include="ScreenConfiguration.cs" />
+    <Compile Include="ServicesPaymentConfig.cs" />
+    <Compile Include="SetExtraDataInfo.cs" />
+    <Compile Include="StateEvent.cs" />
+    <Compile Include="TaskScheduler.cs" />
+    <Compile Include="TerminalInfo.cs" />
+    <Compile Include="TicketLines.cs" />
+    <Compile Include="TransactionMenuItem.cs" />
+    <Compile Include="TransactionList.cs" />
+    <Compile Include="TypeCassetteMapping.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,34 @@
+﻿<html>
+<head>
+	<meta charset="utf-8">
+	<title>WebView2 Example</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#btn").click(function() {
+				window.chrome.webview.postMessage("Hello from WebView2!");
+			});
+		});
+	</script>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+			margin-top: 50px;
+		}
+		h1 {
+			color: #333;
+		}
+		button {
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		</style>
+	</head>
+<body>
+	<h1>Hola desde WebView2!</h1>
+	<button id="btn">Click me!</button>
+
+</body>
+</html>

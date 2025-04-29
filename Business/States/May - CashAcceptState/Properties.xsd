@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+/***********************************************************************************
+*                                                                                  *
+*                                                                                  *
+*    COPYRIGHT (C) DIEBOLD, INCORPORATED   (2006-2008)                             *
+*                       ALL RIGHTS RESERVED                                        *
+*                                                                                  *
+* ===============================================================================  *
+*                                                                                  *
+*                                                                                  *
+* This software contains proprietary, trade secret information and is the property *
+* of Diebold.  This software and the information contained therein may not be      *
+* disclosed, used, transferred or copied in whole or in part without the express,  *
+* prior written consent of Diebold.                                                *
+*                                                                                  *
+*                                                                                  *
+***********************************************************************************/
+
+-->
+<xs:schema xmlns="http://www.diebold.com/agilis/activities/CardRead/1.0.0.0/" xmlns:agilis="http://www.diebold.com/agilis/activities/types/1.0.0.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.diebold.com/agilis/activities/CardRead/1.0.0.0/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.diebold.com/agilis/activities/types/1.0.0.0/" schemaLocation="../../custom-types-1.0.0.0.xsd"/>
+	<xs:element name="Properties">
+		<xs:annotation>
+			<xs:documentation>Defines CardRead activity properties.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ScreenName" type="xs:string" default="">
+					<xs:annotation>
+						<xs:documentation>Displays a message asking the customer to insert or remove the card.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CancelKeyboardEnabled" type="xs:boolean" default="true">
+					<xs:annotation>
+						<xs:documentation>If true, enables the CANCEL key.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="AcceptNonMagneticCard" type="xs:boolean" default="true">
+				  <xs:annotation>
+					<xs:documentation>Indicates if primary card reader accepts cards without magnetic (flux sensor). Default true.</xs:documentation>
+				  </xs:annotation>
+				</xs:element>
+				<xs:element name="ReadOnCardRemoval" type="xs:boolean" default="false">
+				  <xs:annotation>
+					<xs:documentation>If true the activity will ask the customer to remove the card and read it according to the property "ReadCondition", with the exception of the chip. The reading applies only to DIP card readers with read mode configured to "Removal". If the magnetic stripes are	successfully read, the visit.FITEntry is initialized and a new AuthenticateCard execution is necessary. Default is false.</xs:documentation>
+				  </xs:annotation>
+				</xs:element>
+				<xs:element name="FallbackMagneticStripe" type="xs:boolean" default="false">
+				  <xs:annotation>
+					<xs:documentation>Indicates a fallback to magnetic stripe. Default is false.</xs:documentation>
+				  </xs:annotation>
+				</xs:element>
+        
+				<!-- More Time fields -->
+        <xs:element name="MoreTime">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MoreTimeScreenName" type="xs:string" default="C00.ndc">
+                <xs:annotation>
+                  <xs:documentation>Define the More Time Screen Name.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="MaxTimeOut" type="xs:int" default="30">
+                <xs:annotation>
+                  <xs:documentation>Defines the maximum time that the activity will have to wait response.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="MaxTimeOutRetries" type="xs:int" default="3">
+                <xs:annotation>
+                  <xs:documentation>Indicates o number of timeout retries.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="MoreTimeKeyboardEnabled" type="xs:boolean" default="true">
+                <xs:annotation>
+                  <xs:documentation>If true, enable the ENTER and CANCEL keyboard to MoreTime screen</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+        <xs:element name="ErrorScreens">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CardReaderUnavailable" type="xs:string" default="">
+                <xs:annotation>
+                  <xs:documentation>Displays a message saying card reader is unavailable (offline, on error, etc...).</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CardReaderError" type="xs:string" default="">
+                <xs:annotation>
+                  <xs:documentation>Screen to be shown when card reading fails or the card cannot be read.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CardWrongInserted" type="xs:string" default="">
+                <xs:annotation>
+                  <xs:documentation>Displays a message saying card was wrong inserted.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="InvalidCard" type="xs:string" default="">
+                <xs:annotation>
+                  <xs:documentation>Displays a message saying card is invalid.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="TimeShowError" type="xs:int" default="5">
+                <xs:annotation>
+                  <xs:documentation>Defines the maximum time in seconds the error messages are shown. Value must be greater than zero. Default 5 seconds.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="ReadCondition">
+          <xs:annotation>
+            <xs:documentation>Primary card reader - read condition properties.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Track1" type="xs:string" default="true">
+                <xs:annotation>
+                  <xs:documentation>Indicates if the track 1 should be read by primary card reader. Default is true.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Track2" type="xs:string" default="true">
+                <xs:annotation>
+                  <xs:documentation>Indicates if the track 2 should be read by primary card reader. Default is true.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Track3" type="xs:string" default="true">
+                <xs:annotation>
+                  <xs:documentation>Indicates if the track 3 should be read by primary card reader. Default is true.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="Chip" type="xs:string" default="false">
+                <xs:annotation>
+                  <xs:documentation>Indicates if the chip should be connected. Default is false.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="ContactlessCardReadOptions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EnableContactlessCardRead" type="xs:boolean" default="false">
+                <xs:annotation>
+                  <xs:documentation>Enables the secondary (contactless) card reader. Default is false.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="AcceptNonMagneticCards" type="xs:boolean" default="true">
+                <xs:annotation>
+                  <xs:documentation>Indicates if contactless card reader accepts the non-magnetic cards (smart card without magnetic tracks). Default is true.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="ReadCondition">
+                <xs:annotation>
+                  <xs:documentation>Contactless card reader - read condition properties.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Track1" type="xs:string" default="true">
+                      <xs:annotation>
+                        <xs:documentation>Indicates if the track 1 should be read by contactless card reader. Default is true.</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="Track2" type="xs:string" default="true">
+                      <xs:annotation>
+                        <xs:documentation>Indicates if the track 2 should be read by contactless card reader. Default is true.</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="Track3" type="xs:string" default="true">
+                      <xs:annotation>
+                        <xs:documentation>Indicates if the track 3 should be read by contactless card reader. Default is true.</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="Chip" type="xs:string" default="false">
+                      <xs:annotation>
+                        <xs:documentation>Indicates if the chip should be connected. Default is false.</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        
+        <xs:element name="Journal">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EnableJournal" type="xs:boolean" default="false">
+                <xs:annotation>
+                  <xs:documentation>Indicates if journaling is to be performed. Default false.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CardInsertedFileName" type="xs:string" default="CardInserted.txt">
+                <xs:annotation>
+                  <xs:documentation>Name of the file that contains the text to be written when card is inserted.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CardWrongInsertedFileName" type="xs:string" default="CardWrongInserted.txt">
+                <xs:annotation>
+                  <xs:documentation>Name of the file that contains the text to be written when card is wrong inserted.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
