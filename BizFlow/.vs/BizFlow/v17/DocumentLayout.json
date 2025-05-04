@@ -1,0 +1,106 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8D94EF9A-3CA4-4BF2-9E44-91C30305059C}|..\\BizFlow2\\Entities2\\Entities2.csproj|c:\\users\\nico\\documents\\github\\personal\\bizflow2\\entities2\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94329DB7-672A-4BFF-A024-61EF92283E17}|BizFlow.csproj|c:\\users\\nico\\documents\\github\\personal\\bizflow\\mainbrowser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94329DB7-672A-4BFF-A024-61EF92283E17}|BizFlow.csproj|solutionrelative:mainbrowser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94329DB7-672A-4BFF-A024-61EF92283E17}|BizFlow.csproj|c:\\users\\nico\\documents\\github\\personal\\bizflow\\mainbrowser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{94329DB7-672A-4BFF-A024-61EF92283E17}|BizFlow.csproj|solutionrelative:mainbrowser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow\\PrimaryBrowser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PrimaryBrowser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow\\primarybrowser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:primarybrowser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow2\\Entities2\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\BizFlow2\\Entities2\\Class1.cs",
+              "ToolTip": "C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow2\\Entities2\\Class1.cs",
+              "RelativeToolTip": "..\\BizFlow2\\Entities2\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T00:04:47.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainBrowser.cs",
+              "DocumentMoniker": "C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow\\MainBrowser.cs",
+              "RelativeDocumentMoniker": "MainBrowser.cs",
+              "ToolTip": "C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow\\MainBrowser.cs",
+              "RelativeToolTip": "MainBrowser.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAADgv5sAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T16:37:16.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainBrowser.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow\\MainBrowser.cs",
+              "RelativeDocumentMoniker": "MainBrowser.cs",
+              "ToolTip": "C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow\\MainBrowser.cs [Design]",
+              "RelativeToolTip": "MainBrowser.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T16:37:08.016Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PrimaryBrowser.cs",
+              "DocumentMoniker": "C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow\\PrimaryBrowser.cs",
+              "RelativeDocumentMoniker": "PrimaryBrowser.cs",
+              "ToolTip": "C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow\\PrimaryBrowser.cs",
+              "RelativeToolTip": "PrimaryBrowser.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAqwDsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T15:13:46.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PrimaryBrowser.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow\\PrimaryBrowser.cs",
+              "RelativeDocumentMoniker": "PrimaryBrowser.cs",
+              "ToolTip": "C:\\Users\\Nico\\Documents\\GitHub\\Personal\\BizFlow\\PrimaryBrowser.cs [Design]",
+              "RelativeToolTip": "PrimaryBrowser.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T15:11:37.955Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
