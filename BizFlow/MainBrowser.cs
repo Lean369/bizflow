@@ -56,10 +56,6 @@ namespace BizFlow
                 this.TopMost = this.Core.ScreenConfiguration.MainBrowserTopMost;
                 this.StartPosition = FormStartPosition.Manual;
                 this.Location = new Point(this.Core.ScreenConfiguration.MainBrowserPosX, this.Core.ScreenConfiguration.MainBrowserPosY);
-                this.ScheduleTask(() =>
-                {
-                    this.Callback();
-                });
                 this.MainBrowserInitialized = true;
                 if (this.Core.AlephATMAppData.SupervisorAppEnabled)
                 {
@@ -256,8 +252,8 @@ namespace BizFlow
                 await this.MainWebBrowser.EnsureCoreWebView2Async(null);
 
                 //// Navegar a la URL después de la inicialización
-                //string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "browser/index.html");
-                //this.MainWebBrowser.CoreWebView2.Navigate($"file:///{path}");
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "browser/index.html");
+                this.MainWebBrowser.CoreWebView2.Navigate($"file:///{path}");
 
                 this.MainWebBrowser.CoreWebView2.WebMessageReceived += async (sender, args) =>
                 {
