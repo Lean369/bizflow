@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
 using Microsoft.Web.WebView2.WinForms;
 using Entities;
+using System.Threading.Tasks;
 
 namespace BizFlow
 {
@@ -32,10 +33,11 @@ namespace BizFlow
             this.FormClosing += Form1_FormClosing;
             this.Core = new Business.Core(out ret);
             this.QueueHtmlScreen = new Queue<StateEvent>();
-            this.MainWebBrowser.CoreWebView2InitializationCompleted += this.WebView_CoreWebView2InitializationCompleted;
+            this.StartHttpServer();
             this.InitializeWebView2Async();
             this.Core.EvtShowHtmlData += new Business.Core.DelegateSendHtmlData(this.EnqueueScreenData);
             this.Startup();
+
             if (ret)
             {
                 Log.Info("--->--->Initialization WebBrowser ok");
@@ -66,6 +68,15 @@ namespace BizFlow
             catch (Exception ex) { Log.Fatal(ex); }
         }
 
+        private void StartHttpServer()
+                    {
+            try
+            {
+                SimpleHttpServer server = new SimpleHttpServer("http://localhost:8080/");
+                Task.Run(() => server.Start());
+            }
+            catch (Exception ex) { Log.Fatal(ex); }
+        }
 
         public void ScheduleTask(Action task)
         {
@@ -131,6 +142,16 @@ namespace BizFlow
                 }
             }
             catch (Exception ex) { Log.Fatal(ex); }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.MainWebBrowser.CoreWebView2.ExecuteScriptAsync("navigate('login');");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.MainWebBrowser.CoreWebView2.ExecuteScriptAsync("navigate('welcome');");
         }
 
         private void ExecuteJSfunctionInvoke(string functionName, object param)
@@ -250,10 +271,11 @@ namespace BizFlow
             try
             {
                 await this.MainWebBrowser.EnsureCoreWebView2Async(null);
-
+                this.MainWebBrowser.CoreWebView2InitializationCompleted += this.WebView_CoreWebView2InitializationCompleted;
                 //// Navegar a la URL después de la inicialización
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "browser/index.html");
-                this.MainWebBrowser.CoreWebView2.Navigate($"file:///{path}");
+                //string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "browser/index.html");
+                //this.MainWebBrowser.CoreWebView2.Navigate($"file:///{path}");
+                this.MainWebBrowser.CoreWebView2.Navigate("http://localhost:8080");
 
                 this.MainWebBrowser.CoreWebView2.WebMessageReceived += async (sender, args) =>
                 {
@@ -289,6 +311,8 @@ namespace BizFlow
             NLog.LogManager.Shutdown(); // Flush and close down internal threads and timers
             System.Environment.Exit(0);
         }
+
+
     }
 }
 
